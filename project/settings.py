@@ -53,6 +53,7 @@ INSTALLED_APPS = [
      'rest_framework_simplejwt',
      'product',
      'corsheaders',
+     'drf_yasg',
     
 ]
 
