@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'django.contrib.sites',
      'rest_framework_simplejwt',
+     'product',
     
 ]
 
