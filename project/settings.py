@@ -70,25 +70,25 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',  
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOW_HEADERS = [
-    'content-type',
-    'authorization',
-    'x-requested-with',
-    'accept',
-    'origin',
-    'x-csrftoken',
-]
+# CORS_ALLOW_HEADERS = [
+#     'content-type',
+#     'authorization',
+#     'x-requested-with',
+#     'accept',
+#     'origin',
+#     'x-csrftoken',
+# ]
 
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS',
-]
+# CORS_ALLOW_METHODS = [
+#     'GET',
+#     'POST',
+#     'PUT',
+#     'PATCH',
+#     'DELETE',
+#     'OPTIONS',
+# ]
 
 
  
