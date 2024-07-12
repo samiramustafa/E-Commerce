@@ -27,6 +27,7 @@ from django.urls import path, re_path
 
 
 
+
 ### for swager
 schema_view = get_schema_view(
    openapi.Info(
@@ -41,11 +42,14 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+###handelar
+from django.conf.urls import handler404, handler500
+from .views import custom_404, custom_500
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
+    path('users/', include('users.urls')),   ##user app
     path('api/auth/', include('dj_rest_auth.urls')),
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -54,9 +58,14 @@ urlpatterns = [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-     
+    path('api/', include('product.urls')),  ##product app
 
-
+    
 ]
+
+handler404 = custom_404
+handler500 = custom_500
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

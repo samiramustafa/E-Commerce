@@ -11,7 +11,7 @@ class Profile (models.Model):
     birth_date=models.DateField(null=True)
     phone_number=models.CharField(max_length=15)
     country=models.ForeignKey('Country',related_name='country',on_delete=models.CASCADE,blank=True, null=True)
-    image=models.ImageField(upload_to='profile_img',blank=True, null=True)
+    image=models.ImageField(upload_to='profile_img', default='profile_img/default-profile.jpg', blank=True, null=True)
     slug=models.SlugField(null=True, blank=True,unique=True)
     join_date=models.DateTimeField(blank=True, default=datetime.datetime.now)
 
