@@ -4,6 +4,8 @@ from django.db.models import Q
 from .models import Category, Subcategory, Product, Coupon
 from .serializers import CategorySerializer, SubcategorySerializer, ProductSerializer, CouponSerializer
 
+
+### for test 
 class CategoryListCreate(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
